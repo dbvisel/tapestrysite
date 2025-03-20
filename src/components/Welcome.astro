@@ -12,10 +12,17 @@ import background from '../assets/background.svg';
 			<h2>
 				An Internet Archive Project
 			</h2>
+      <h3>Tagline goes here?</h3>
 		</section>
+    <div id="notebox"><p>(Note what happens when you use the scrollwheel or two-fingered scroll to scroll down.)</p></div>
     <section>
       <h3>A sample tapestry:</h3>
-      <iframe src="https://tapestries.asteasolutions.net/t/9131764f-a66d-4eee-b950-c6bda68138b7" width="1024" height="768" title="Tapestry new tapestry" frameborder="0" />
+      <iframe src="https://tapestries.asteasolutions.net/t/9131764f-a66d-4eee-b950-c6bda68138b7" width="1024" height="768" allow="fullscreen" title="Tapestry new tapestry" frameborder="0" />
+    </section>
+    <section>
+      <h3>Another:</h3>
+      <iframe src="https://tapestries.asteasolutions.net/t/ee1c0734-7f89-4124-9388-17544effa55c" width="1024" height="768" allow="fullscreen" title="Tapestry new tapestry" frameborder="0" />
+
     </section>
 	</main>
 </div>
@@ -28,12 +35,11 @@ import background from '../assets/background.svg';
 		width: 100%;
 		height: 100%;
 		z-index: -1;
-		filter: blur(100px);
+		filter: blur(20px);
 	}
 
 	#container {
-		font-family: Inter, Roboto, 'Helvetica Neue', 'Arial Nova', 'Nimbus Sans', Arial, sans-serif;
-		height: 100%;
+		/* height: 100%; */
 	}
 
 	main {
@@ -47,7 +53,7 @@ import background from '../assets/background.svg';
 		display: flex;
 		align-items: start;
 		flex-direction: column;
-		justify-content: center;
+		align-items: center;
 		padding: 16px;
     margin-bottom: 64px;
 	}
@@ -65,6 +71,22 @@ import background from '../assets/background.svg';
 
   h2 {
     font-style: italic;
+  }
+
+  h3 {
+    text-align: center;
+  }
+
+  #notebox {
+    background-color: yellow;
+    border: 1px solid black;
+    padding: 16px;
+  }
+
+  #notebox p {
+    margin: 0;
+    font-style: italic;
+    color: #444;
   }
 
 </style>
