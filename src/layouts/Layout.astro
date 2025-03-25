@@ -1,5 +1,7 @@
 ---
 import Footer from "../components/Footer.astro";
+import Backdrop from "../components/Backdrop.astro";
+import backdrop from "../js/backdrop.js";
 ---
 
 <!doctype html>
@@ -18,10 +20,12 @@ import Footer from "../components/Footer.astro";
     <title>Tapestries: An Internet Archive Project</title>
   </head>
   <body>
+    <Backdrop />
     <main>
       <slot />
     </main>
     <Footer />
+    <div id="extra"></div>
   </body>
 </html>
 
@@ -36,13 +40,13 @@ import Footer from "../components/Footer.astro";
     flex-direction: column;
     align-items: center;
     box-sizing: border-box;
-    --background-color: #111;
+    --background-color: rgba(0, 0, 0, 0.95);
     --text-color: #fff;
     --accent-color: magenta;
     --outer-margin: 64px;
     --inner-margin: 32px;
     color: var(--text-color);
-    background-color: var(--background-color);
+    background-color: blue;
     --header-size: 10vw;
     --font-size: 20px;
     @media screen and (max-width: 1023px) {
@@ -52,6 +56,10 @@ import Footer from "../components/Footer.astro";
     }
   }
 
+  body {
+    padding: var(--inner-margin);
+  }
+
   main {
     display: flex;
     flex-direction: column;
@@ -59,7 +67,8 @@ import Footer from "../components/Footer.astro";
     width: 100%;
     background-color: var(--background-color);
     box-sizing: border-box;
-    padding: var(--outer-margin);
+    padding: var(--inner-margin);
+    z-index: 2;
   }
 
   h2 {
@@ -82,6 +91,7 @@ import Footer from "../components/Footer.astro";
     align-items: center;
     padding: var(--outer-margin) var(--inner-margin);
     border-top: 4px dotted var(--accent-color);
+    box-sizing: border-box;
   }
 
   p,
@@ -89,5 +99,10 @@ import Footer from "../components/Footer.astro";
   li {
     font-size: var(--font-size);
     line-height: 1.333;
+  }
+
+  #extra {
+    min-height: var(--inner-margin);
+    width: 100%;
   }
 </style>
