@@ -22,16 +22,12 @@ import Notebox from "./Notebox.astro";
   }
 
   #hero {
+    width: 100%;
     display: flex;
     align-items: start;
     flex-direction: column;
     align-items: center;
     padding: var(--inner-margin);
-    border-bottom: 4px dotted var(--accent-color);
-    --header-size: 10vw;
-    @media screen and (max-width: 1023px) {
-      --header-size: 72px;
-    }
   }
 
   h1 {
@@ -44,18 +40,6 @@ import Notebox from "./Notebox.astro";
   h1 a {
     text-decoration: none;
     color: var(--text-color);
-  }
-
-  h2 {
-    font-size: calc(var(--header-size) * 0.4);
-    font-style: italic;
-    font-weight: normal;
-    color: var(--accent-color);
-    text-align: center;
-  }
-
-  h3 {
-    text-align: center;
   }
 
   #onmobile {
