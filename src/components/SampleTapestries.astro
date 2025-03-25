@@ -1,0 +1,40 @@
+---
+import Notebox from "./Notebox.astro";
+---
+
+<section>
+  <Notebox>
+    (Note what happens when you use the scrollwheel or two-fingered scroll to
+    scroll down.)
+  </Notebox>
+  <h3>A sample tapestry:</h3>
+  <iframe
+    src="https://tapestries.asteasolutions.net/t/9131764f-a66d-4eee-b950-c6bda68138b7"
+    width="1024"
+    height="768"
+    allow="fullscreen"
+    title="Tapestry new tapestry"
+    frameborder="0"></iframe>
+  <h3>Another:</h3>
+  <iframe
+    src="https://tapestries.asteasolutions.net/t/ee1c0734-7f89-4124-9388-17544effa55c"
+    width="1024"
+    height="768"
+    allow="fullscreen"
+    title="Tapestry new tapestry"
+    frameborder="0"></iframe>
+</section>
+
+<style>
+  section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: var(--inner-margin);
+    max-width: 100%;
+    overflow-x: scroll;
+    @media screen and (max-width: 1024px) {
+      padding: var(--inner-margin) 0;
+    }
+  }
+</style>

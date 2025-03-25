@@ -1,0 +1,24 @@
+---
+
+---
+
+<div id="notebox">
+  <p>
+    <slot />
+  </p>
+</div>
+
+<style>
+  #notebox {
+    background-color: yellow;
+    border: 2px dashed var(--background-color);
+    padding: 16px;
+    margin: var(--inner-margin) 0;
+  }
+
+  #notebox > p {
+    margin: 0;
+    font-style: italic;
+    color: #444;
+  }
+</style>
