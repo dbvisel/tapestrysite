@@ -3,8 +3,17 @@ import Notebox from "./Notebox.astro";
 ---
 
 <header id="hero">
-  <h1><a href="https://tapestries.media">Tapestries</a></h1>
-  <h2>An Internet Archive Project</h2>
+  <h1>
+    <a href="https://tapestries.media"
+      ><img
+        src="tapestrylogo.svg"
+        alt="Tapestries"
+        width="500"
+        height="auto"
+      /></a
+    >
+  </h1>
+  <h2>An initiative of the Internet Archive</h2>
   <h3>Tagline goes here?</h3>
   <div id="onmobile">
     <Notebox
@@ -23,6 +32,11 @@ import Notebox from "./Notebox.astro";
     align-items: center;
     padding: var(--inner-margin);
     box-sizing: border-box;
+    background-color: var(--background-color);
+    margin-bottom: var(--outer-margin);
+    /* max-width: 50%; */
+    border-radius: var(--border-radius);
+    box-shadow: 0 0 10px orange;
   }
 
   h1 {
@@ -35,6 +49,18 @@ import Notebox from "./Notebox.astro";
   h1 a {
     text-decoration: none;
     color: var(--text-color);
+  }
+
+  h2 {
+    text-transform: uppercase;
+    font-size: calc(var(--header-size) * 0.15);
+    font-weight: 800;
+    letter-spacing: 3px;
+  }
+
+  h3 {
+    font-weight: 200;
+    margin-bottom: 0;
   }
 
   #onmobile {
