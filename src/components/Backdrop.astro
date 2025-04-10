@@ -5,6 +5,8 @@
 <div id="backdrop" onload="draw()">
   <canvas id="canvas"></canvas>
   <script>
+    // TODO: can we make this oblique?
+
     const delay = (delayInMs: number) => {
       return new Promise((resolve) => setTimeout(resolve, delayInMs));
     };
@@ -31,17 +33,41 @@
             ctx.strokeStyle = `rgba(${Math.floor(Math.random() * 255)},${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)},0.2)`;
             ctx.lineWidth = Math.floor(Math.random() * 5) + 1;
             ctx.moveTo(x, 0);
-            ctx.lineTo(x, height);
+            ctx.lineTo(0, y);
+            // ctx.lineTo(x, height);
             ctx.stroke();
             const vline = await delay(delayVal);
 
             ctx.beginPath();
-            ctx.strokeStyle = `rgba(${Math.floor(Math.random() * 255)},${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)}, 0.2)`;
+            ctx.strokeStyle = `rgba(${Math.floor(Math.random() * 255)},${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)},0.2)`;
             ctx.lineWidth = Math.floor(Math.random() * 5) + 1;
             ctx.moveTo(0, y);
             ctx.lineTo(width, y);
+            // ctx.lineTo(x, height);
+            ctx.stroke();
+            const vline2 = await delay(delayVal);
+
+            ctx.beginPath();
+            ctx.strokeStyle = `rgba(${Math.floor(Math.random() * 255)},${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)}, 0.2)`;
+            ctx.lineWidth = Math.floor(Math.random() * 5) + 1;
+            ctx.moveTo(x, height);
+            ctx.lineTo(width, y);
+            // ctx.moveTo(0, y);
+            // ctx.lineTo(width, 0);
+            // ctx.lineTo(width, y);
             ctx.stroke();
             const hline = await delay(delayVal);
+
+            ctx.beginPath();
+            ctx.strokeStyle = `rgba(${Math.floor(Math.random() * 255)},${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)}, 0.2)`;
+            ctx.lineWidth = Math.floor(Math.random() * 5) + 1;
+            ctx.moveTo(x, height);
+            ctx.lineTo(x, 0);
+            // ctx.moveTo(0, y);
+            // ctx.lineTo(width, 0);
+            // ctx.lineTo(width, y);
+            ctx.stroke();
+            const hline2 = await delay(delayVal);
 
             count++;
           }
